@@ -1,0 +1,238 @@
+@font-face {
+  font-family: urbanistRegular;
+  src: url("./fonts/Urbanist-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: urbanistSemiBold;
+  src: url("./fonts/Urbanist-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: urbanistBold;
+  src: url("./fonts/Urbanist-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: #ffffff;
+}
+
+.ellipse {
+  pointer-events: none;
+  position: absolute;
+  width: 42vw;
+}
+
+.ellipse-2 {
+  pointer-events: none;
+  position: absolute;
+  width: 32vw;
+}
+
+.ellipse div,
+.ellipse-2 div {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  background: radial-gradient(
+    27.1% 27.1% at 50% 50%,
+    rgba(166, 8, 169, 0.46) 0%,
+    rgba(177, 40, 180, 0) 100%
+  );
+  opacity: 0.5;
+}
+
+header {
+  background: radial-gradient(
+    79.67% 137.33% at -0.45% -6.11%,
+    #2d0d46 0%,
+    #1f0a30 50%,
+    #110718 100%
+  );
+}
+
+nav ul li:not(:last-child) {
+  position: relative;
+}
+
+nav ul li:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #9342be;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -3px;
+  transition: 0.4s;
+}
+nav ul li:hover:after {
+  width: 70%;
+}
+
+nav ul li a {
+  transition: 0.3s;
+}
+
+nav .hambuger-menu {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+nav .hambuger-menu span {
+  width: 30px;
+  height: 4px;
+  background-color: #ffffff;
+  display: block;
+  opacity: 1;
+  transition: all 0.3s;
+  margin: 8px 0;
+  position: relative;
+}
+
+nav ul {
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 640px) {
+  nav ul {
+    position: fixed;
+    transform: translateX(-100%);
+    display: block !important;
+    width: 70vw;
+    height: 100vh;
+    background-color: #110718;
+    font-size: 20px;
+    left: 0;
+    z-index: 10;
+    top: 0;
+  }
+  nav ul.show {
+    transform: translateX(0%);
+  }
+  nav ul li {
+    display: block;
+    padding: 20px 30px;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+  }
+  nav ul li::after {
+    display: none;
+  }
+  nav ul a {
+    display: inline-block !important;
+  }
+
+  nav .hambuger-menu.active span:first-child {
+    width: 30px;
+    transform: rotate(45deg);
+    transform-origin: -2px 5px;
+  }
+  nav .hambuger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  nav .hambuger-menu.active span:nth-child(3) {
+    width: 30px;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
+  }
+}
+
+.overlaybg {
+  position: fixed;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: 0.3s;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.overlaybg.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#aboutUs {
+  background: radial-gradient(
+    19.93% 35% at 67.53% 45.18%,
+    #260640 0%,
+    #15081f 100%
+  );
+}
+
+#aboutUs .about-us-report > div {
+  border-radius: 13px;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, #b128b4, #260640);
+  background: linear-gradient(
+    174.59deg,
+    #2d1341 -19.68%,
+    rgba(62, 2, 108, 0) 98.63%
+  );
+}
+
+#aboutUs .about-us-report > div p:nth-child(1) {
+  background: linear-gradient(
+    180deg,
+    #ff00f5 17.71%,
+    #ee88ff 33.33%,
+    #f109e8 49.48%,
+    #673092 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+#ourPhilosophy {
+  background-image: url("./images/our-philosophy-bg.png");
+  background-size: cover;
+}
+
+#ourPhilosophy .philosophy-item {
+  background: linear-gradient(
+    91.96deg,
+    #9a249c -39.54%,
+    rgba(45, 13, 70, 0.38) 100%
+  );
+}
+
+#achievement {
+  background-image: url("./images/achievement-bg.png");
+  background-size: cover;
+}
+
+#achievement .achievement-item {
+  border-radius: 13px;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, #b128b4, #260640);
+  background: linear-gradient(
+    174.59deg,
+    #2d1341 -19.68%,
+    rgba(62, 2, 108, 0) 98.63%
+  );
+}
+
+#contactUs {
+  background: #1b0c27;
+}
+
+#contactUs img.contact-us-bg {
+  mix-blend-mode: color-burn;
+}
